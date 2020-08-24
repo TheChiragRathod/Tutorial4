@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Tutorial4</string>
+    <string name="txtWelcome">Welcome</string>
+    <string name="splashText">ChiRag Technology</string>
+    <string name="loginScreen">Login</string>
+    <string name="welcomeScreen">Welcome</string>
+</resources>
