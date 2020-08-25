@@ -9,23 +9,20 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
-
+public class MainActivity extends AppCompatActivity
+{
     public static final String Message="com.example.tutorial3.Message";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
-
-
     public void login(View view)
     {
         EditText Edittxtuser=findViewById(R.id.edtUsername);
         EditText Edittxtpass=findViewById(R.id.edtPassword);
         String Username=Edittxtuser.getText().toString();
         String Password=Edittxtpass.getText().toString();
-
         if(!Username.isEmpty() && !Password.isEmpty())
         {
             if(Patterns.EMAIL_ADDRESS.matcher(Username).matches())
@@ -42,10 +39,12 @@ public class MainActivity extends AppCompatActivity {
         }
         else
         {
-            Toast.makeText(this, "Please Enter Username and Password!...", Toast.LENGTH_SHORT).show();
+
+            Edittxtpass.requestFocus();
+            Edittxtpass.setError("Please Enter Password");
+            Edittxtuser.requestFocus();
+            Edittxtuser.setError("Please Enter Username");
+            //Toast.makeText(this, "Please Enter Username and Password!...", Toast.LENGTH_SHORT).show();
         }
-
     }
-
-
 }
